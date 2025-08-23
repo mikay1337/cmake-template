@@ -55,7 +55,15 @@ jobs:
           git status
           git commit -m "chore: INITIAL Migrate Repo Template"
 
-      # Push changes
+      # Push changes 
       - name: Push changes
         run: |
           git push origin main
+
+      # Create develop branch if not exists
+      - name: Create develop branch if not exists
+        run: |
+          if ! git ls-remote --heads origin develop | grep develop; then
+            git checkout -b develop
+            git push origin develop
+          fi
