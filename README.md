@@ -1,5 +1,6 @@
 # cmake-template
 
+[![CMake](https://github.com/mikay1337/cmake-template/actions/workflows/cmake-multi-platform.yml/badge.svg)](https://github.com/mikay1337/cmake-template/actions/workflows/cmake-multi-platform.yml)
 [![Windows](https://github.com/mikay1337/cmake-template/actions/workflows/windows.yml/badge.svg)](https://github.com/mikay1337/cmake-template/actions/workflows/windows.yml)
 [![macOS](https://github.com/mikay1337/cmake-template/actions/workflows/macos.yml/badge.svg)](https://github.com/mikay1337/cmake-template/actions/workflows/macos.yml)
 [![Linux](https://github.com/mikay1337/cmake-template/actions/workflows/linux.yml/badge.svg)](https://github.com/mikay1337/cmake-template/actions/workflows/linux.yml)
