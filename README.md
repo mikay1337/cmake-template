@@ -21,5 +21,5 @@
 
 
 
-[codecov-badge]:   https://codecov.io/gh/mikay1337/cmake-template/branch/master/graph/badge.svg
+[codecov-badge]:   https://codecov.io/gh/mikay1337/cmake-template/branch/main/graph/badge.svg
 [codecov-link]:    https://codecov.io/gh/mikay1337/cmake-template
