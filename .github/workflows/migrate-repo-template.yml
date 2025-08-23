@@ -40,8 +40,9 @@ jobs:
           # README from template
           mv -f .github/template/README.md README.md
           rm -Rf .github/template/
-          sed -i "s@%OWNER_NAME%@$GITHUB_REPOSITORY_OWNER@g" README.md
-          sed -i "s@%REPO_NAME%@$GITHUB_REPOSITORY_NAME@g" README.md
+          sed -i "s@%%OWNER_NAME%%@$GITHUB_REPOSITORY_OWNER@g" README.md
+          sed -i "s@%%REPO_NAME%%@$GITHUB_REPOSITORY_NAME@g" README.md
+          sed -i "s@%%REPO_URL%%@$GITHUB_REPOSITORY_URL@g" README.md
           
           # cleanup this very GitHub Actions workflow yml
           rm .github/workflows/migrate-repo-template.yml
