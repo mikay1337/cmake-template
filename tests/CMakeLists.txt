@@ -15,7 +15,6 @@ foreach(test_src IN LISTS tests_src)
     add_executable(${exename} src/${test_src})
     target_link_libraries(${exename}
         PRIVATE 
-            Catch2::Catch2
             Catch2::Catch2WithMain
     )
     set_target_properties(${exename} PROPERTIES
