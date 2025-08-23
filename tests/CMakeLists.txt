@@ -8,14 +8,14 @@ set(tests_src
 foreach(test_src IN LISTS tests_src)
 
     get_filename_component(exename ${test_src} NAME_WE)
-    add_executable(${exename} src/${test_src})
+    add_executable(${exename} ${test_src})
     target_link_libraries(${exename}
         PRIVATE 
             cmake-template
             Catch2::Catch2WithMain
     )
     set_target_properties(${exename} PROPERTIES
-        CXX_STANDARD 20
+        CXX_STANDARD 23
         CXX_STANDARD_REQUIRED ON
         CXX_EXTENSIONS OFF
     )
@@ -26,6 +26,5 @@ foreach(test_src IN LISTS tests_src)
     endif()
 
     
-    add_test(NAME ${exename} WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND ${exename})
-
+    add_test(NAME ${exename} COMMAND $<TARGET_FILE:${exename}>)
 endforeach()

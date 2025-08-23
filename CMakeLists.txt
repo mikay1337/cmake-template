@@ -37,7 +37,6 @@ option(CMAKE_TEMPLATE_INSTALL "Install ${PROJECT_NAME}" ON)
 #==============================================================================
 # Dependencies
 #==============================================================================
-include(cmake/catch2.cmake)
 #include(cmake/spdlog.cmake)
 #add_subdirectory(thirdparty)
 
