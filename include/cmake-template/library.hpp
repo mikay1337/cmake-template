@@ -1,5 +1,5 @@
 #pragma once
-#include <cmake-template/common.h>
+#include <cmake-template/common.hpp>
 
 [[nodiscard]] CMAKE_TEMPLATE_INLINE int factorial_inline(int n) noexcept
 {

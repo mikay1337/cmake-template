@@ -39,6 +39,7 @@ option(CMAKE_TEMPLATE_INSTALL "Install ${PROJECT_NAME}" ON)
 #==============================================================================
 include(cmake/catch2.cmake)
 #include(cmake/spdlog.cmake)
+#add_subdirectory(thirdparty)
 
 #==============================================================================
 # Static/Shared library
