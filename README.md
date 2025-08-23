@@ -10,4 +10,16 @@
 [![clang-tidy](https://github.com/mikay1337/cmake-template/actions/workflows/clang-tidy.yml/badge.svg)](https://github.com/mikay1337/cmake-template/actions/workflows/clang-tidy.yml)
 [![Sanitizer](https://github.com/mikay1337/cmake-template/actions/workflows/sanitizer.yml/badge.svg)](https://github.com/mikay1337/cmake-template/actions/workflows/sanitizer.yml)
 [![CodeQL](https://github.com/mikay1337/cmake-template/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/mikay1337/cmake-template/actions/workflows/codeql-analysis.yml)
-[![Codecov](https://codecov.io/gh/taocpp/PEGTL/branch/main/graph/badge.svg?token=ykWa8RRdyk)](https://codecov.io/gh/taocpp/PEGTL)
+[![Codecov][codecov-badge]][codecov-link]
+
+
+
+
+
+
+
+
+
+
+[codecov-badge]:   https://codecov.io/gh/mikay1337/cmake-template/branch/master/graph/badge.svg
+[codecov-link]:    https://codecov.io/gh/mikay1337/cmake-template
