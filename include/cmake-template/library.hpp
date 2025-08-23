@@ -1,7 +1,7 @@
 #pragma once
 #include <cmake-template/common.hpp>
 
-[[nodiscard]] CMAKE_TEMPLATE_INLINE int factorial_inline(int n) noexcept
+[[nodiscard]] inline int factorial_inline(int n) noexcept
 {
     if (n < 0) return -1;
     if (n == 0 || n == 1) return 1;
