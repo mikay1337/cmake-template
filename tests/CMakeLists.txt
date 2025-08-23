@@ -29,6 +29,7 @@ foreach(test_src IN LISTS tests_src)
         target_compile_options(${exename} PRIVATE -Wall -Wextra -Wpedantic -Werror)
     endif()
 
+    
     add_test(NAME ${exename} WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND ${exename})
 
 endforeach()
