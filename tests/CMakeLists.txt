@@ -31,6 +31,4 @@ foreach(test_src IN LISTS tests_src)
 
     add_test(NAME ${exename} WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND ${exename})
 
-
-
 endforeach()
