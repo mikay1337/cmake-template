@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# Ignored folder
+build/
+out/
+.vscode/
+.vs/

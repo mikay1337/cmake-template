@@ -1,0 +1,67 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 21,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+        "name": "conf-common",
+        "hidden": true,
+        "generator": "Ninja",
+        "binaryDir": "${sourceDir}/out/build/${presetName}",
+        "installDir": "${sourceDir}/out/install/${presetName}",
+        "cacheVariables": {
+            "CMAKE_CXX_STANDARD": "23",
+            "CMAKE_CXX_STANDARD_REQUIRED": "ON",
+            "CMAKE_ARCHIVE_OUTPUT_DIRECTORY": "${sourceDir}/out/bin/${presetName}",
+            "CMAKE_LIBRARY_OUTPUT_DIRECTORY": "${sourceDir}/out/bin/${presetName}",
+            "CMAKE_RUNTIME_OUTPUT_DIRECTORY": "${sourceDir}/out/bin/${presetName}"
+        }
+        },
+        {
+            "name": "conf-windows-common",
+            "hidden": true,
+            "inherits": ["conf-common"],
+            "condition": { "type": "equals", "lhs": "${hostSystemName}", "rhs": "Windows" }
+        },
+        {
+            "name" : "msvc-x64",
+            "displayName": "Windows MSVC x64",
+            "description": "Visual Studio 17 2022 x64",
+            "inherits": "conf-windows-common",
+            "architecture": { "value": "x64", "strategy": "external" },
+            "toolset": { "value": "host=x64", "strategy": "external" },
+            "generator": "Visual Studio 17 2022"
+        },
+        {
+            "name": "gcc-x64",
+            "displayName": "GCC x64",
+            "description": "Ninja with GCC x64",
+            "inherits": "conf-common",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "gcc",
+                "CMAKE_CXX_COMPILER": "g++"
+            }
+        },
+         {
+            "name": "clang-x64",
+            "displayName": "Clang x64",
+            "description": "Ninja with Clang x64",
+            "inherits": "conf-common",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "clang",
+                "CMAKE_CXX_COMPILER": "clang++"
+            }
+        }
+    ],
+    "buildPresets": [
+        { "name": "MSVC-x64-Debug",     "configurePreset": "msvc-x64",      "configuration": "Debug"},
+        { "name": "MSVC-x64-Release",   "configurePreset": "msvc-x64",      "configuration": "Release" },
+        { "name": "GCC-x64-Debug",      "configurePreset": "gcc-x64",       "configuration": "Debug" },
+        { "name": "GCC-x64-Release",    "configurePreset": "gcc-x64",       "configuration": "Release" },
+        { "name": "Clang-x64-Debug",    "configurePreset": "clang-x64" ,    "configuration": "Debug" },
+        { "name": "Clang-x64-Release",  "configurePreset": "clang-x64" ,    "configuration": "Release" }
+    ]
+}
