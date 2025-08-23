@@ -1,13 +1,9 @@
 cmake_minimum_required (VERSION 3.30)
-
-
+#project(cmake-template-tests LANGUAGES CXX)
 
 set(tests_src
-    test_main.cpp
+    test_library.cpp
 )   
-
-
-
 
 foreach(test_src IN LISTS tests_src)
 
@@ -15,6 +11,7 @@ foreach(test_src IN LISTS tests_src)
     add_executable(${exename} src/${test_src})
     target_link_libraries(${exename}
         PRIVATE 
+            cmake-template
             Catch2::Catch2WithMain
     )
     set_target_properties(${exename} PROPERTIES

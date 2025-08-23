@@ -63,5 +63,25 @@
         { "name": "GCC-x64-Release",    "configurePreset": "gcc-x64",       "configuration": "Release" },
         { "name": "Clang-x64-Debug",    "configurePreset": "clang-x64" ,    "configuration": "Debug" },
         { "name": "Clang-x64-Release",  "configurePreset": "clang-x64" ,    "configuration": "Release" }
+    ],
+    "testPresets": [
+        {
+            "name" : "test-common",
+            "hidden": true,
+            "output": {
+                "outputOnFailure": true
+            },
+            "execution": {
+                "noTestsAction": "error",
+                "stopOnFailure": true
+            }
+        },
+        {
+            "name": "test-msvc-x64",
+            "displayName": "Windows MSVC x64",
+            "description": "Visual Studio 17 2022 x64",
+            "inherits": "test-common",
+            "configurePreset": "msvc-x64"
+        }
     ]
 }
