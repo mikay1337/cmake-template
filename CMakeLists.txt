@@ -29,7 +29,7 @@ mark_as_advanced(${PROJECT_NAME}_DIR)
 #==============================================================================
 # Options
 #==============================================================================
-option(CMAKE_TEMPLATE_BUILD_SHARED "Build ${PROJECT_NAME} as shared library" ON)
+option(CMAKE_TEMPLATE_BUILD_SHARED "Build ${PROJECT_NAME} as shared library" OFF)
 option(CMAKE_TEMPLATE_BUILD_TESTS "Build tests" ON)
 option(CMAKE_TEMPLATE_BUILD_BENCHMARKS "Build benchmarks" OFF)
 option(CMAKE_TEMPLATE_INSTALL "Install ${PROJECT_NAME}" ON)
