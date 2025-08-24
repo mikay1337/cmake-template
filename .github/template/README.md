@@ -17,4 +17,4 @@
 
 
 [codecov-badge]:   https://codecov.io/gh/%%OWNER_NAME%%/%%REPO_NAME%%/branch/main/graph/badge.svg
-[codecov-link]:    https://codecov.io/gh/%%org%%/%%REPO_NAME%%
+[codecov-link]:    https://codecov.io/gh/%%OWNER_NAME%%/%%REPO_NAME%%
