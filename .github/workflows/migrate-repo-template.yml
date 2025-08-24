@@ -43,9 +43,15 @@ jobs:
           sed -i "s@%%REPO_NAME%%@$GITHUB_REPOSITORY_NAME@g" README.md
           sed -i "s@%%REPO_URL%%@$GITHUB_REPOSITORY_URL@g" README.md
           
+          # move GitHub Actions workflows
+          mv -f .github/template/*.yml .github/workflows/
+
           # cleanup this very GitHub Actions workflow yml
           rm .github/workflows/migrate-repo-template.yml
           rm -Rf < .github/template/removal-list
+          rm -Rf .github/template/
+
+          #remove template files
           rm -Rf .github/template/
 
       - name: Commit files
