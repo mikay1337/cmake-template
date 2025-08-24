@@ -39,13 +39,14 @@ jobs:
 
           # README from template
           mv -f .github/template/README.md README.md
-          rm -Rf .github/template/
           sed -i "s@%%OWNER_NAME%%@$GITHUB_REPOSITORY_OWNER@g" README.md
           sed -i "s@%%REPO_NAME%%@$GITHUB_REPOSITORY_NAME@g" README.md
           sed -i "s@%%REPO_URL%%@$GITHUB_REPOSITORY_URL@g" README.md
           
           # cleanup this very GitHub Actions workflow yml
           rm .github/workflows/migrate-repo-template.yml
+          rm -Rf < .github/template/removal-list
+          rm -Rf .github/template/
 
       - name: Commit files
         run: |
@@ -59,11 +60,3 @@ jobs:
       - name: Push changes
         run: |
           git push origin main
-
-      # Create develop branch if not exists
-      - name: Create develop branch if not exists
-        run: |
-          if ! git ls-remote --heads origin develop | grep develop; then
-            git checkout -b develop
-            git push origin develop
-          fi
