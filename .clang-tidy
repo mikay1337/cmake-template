@@ -1,50 +1,57 @@
 
 Checks: >-
   bugprone-*,
+  -bugprone-easily-swappable-parameters,
   clang-analyzer-*,
   cppcoreguidelines-slicing,
   cppcoreguidelines-special-member-functions,
+  google-build-explicit-make-pair,
+  google-readability-casting,
   llvm-*,
   -llvm-namespace-comment,
-  -llvm-header-guard,
   modernize-*,
-  -modernize-avoid-c-arrays,
-  -modernize-concat-nested-namespaces,
   -modernize-raw-string-literal,
-  -modernize-use-trailing-return-type,
   performance-*,
   readability-*,
-  -readability-avoid-const-params-in-decls,
+  -readability-convert-member-functions-to-static,
   -readability-function-cognitive-complexity,
   -readability-identifier-length,
   -readability-magic-numbers,
-  -readability-static-accessed-through-instance,
   misc-*,
-  -misc-include-cleaner
   -misc-no-recursion,
   -misc-non-private-member-variables-in-classes,
   -misc-unused-alias-decls,
 
 CheckOptions:
-  - { key: readability-identifier-naming.ClassCase,           value: lower_case }
-  - { key: readability-identifier-naming.StructCase,          value: lower_case }
-  - { key: readability-identifier-naming.EnumCase,            value: CamelCase  }
-  - { key: readability-identifier-naming.FunctionCase,        value: lower_case }
-  - { key: readability-identifier-naming.ParameterCase,       value: lower_case }
-  - { key: readability-identifier-naming.VariableCase,        value: lower_case }
-  - { key: readability-identifier-naming.EnumConstantCase,    value: UPPER_CASE }
-  - { key: readability-identifier-naming.NamespaceCase,       value: lower_case }
+  readability-identifier-naming.ClassCase         : CamelCase
+  readability-identifier-naming.StructCase        : CamelCase 
+  readability-identifier-naming.EnumCase          : CamelCase 
+  readability-identifier-naming.FunctionCase      : CamelCase 
+  readability-identifier-naming.ParameterCase     : lower_case 
+  readability-identifier-naming.EnumConstantCase  : CamelCase 
+  readability-identifier-naming.NamespaceCase     : lower_case
+  readability-identifier-naming.MemberCase        : lower_case
+  readability-identifier-naming.PrivateMemberSuffix : '_'
+  readability-identifier-naming.ProtectedMemberSuffix : '_'
+
+  # Ignore main function name
+  readability-identifier-naming.IgnoreMainLikeFunctions : '1'
+
+  # Force brace initialization
+  modernize-use-braced-init-list.StrictMode : true
 
   # Avoid magic numbers unless in constexpr or enums
-  - { key: cppcoreguidelines-avoid-magic-numbers.IgnoreEnums,      value: '1' }
-  - { key: cppcoreguidelines-avoid-magic-numbers.IgnoreExpressions, value: '1' }
+  cppcoreguidelines-avoid-magic-numbers.IgnoreEnums     : '1' 
+  cppcoreguidelines-avoid-magic-numbers.IgnoreExpressions: '1' 
 
-    # Prefer smart pointers over raw new/delete
-  - { key: modernize-use-unique-ptr.CheckSmartPointers,            value: '1' }
-  - { key: modernize-use-nullptr.NullMacros,                       value: 'NULL' }
+  # Prefer smart pointers over raw new/delete
+  modernize-use-unique-ptr.CheckSmartPointers           : '1' 
+  modernize-use-nullptr.NullMacros                      : 'NULL' 
 
   # Force using override keyword on virtual methods
-  - { key: modernize-use-override.AllowOverrideAndFinal,           value: '1' }
+  modernize-use-override.AllowOverrideAndFinal          : '1' 
 
   # Performance tuning: prefer emplace_back over push_back
-  - { key: performance-move-const-arg.WarnOnAllArgumentCopies,     value: '1' }
+  performance-move-const-arg.WarnOnAllArgumentCopies    : '1' 
+
+WarningsAsErrors: '*'
