@@ -12,7 +12,7 @@
 [![Sanitizer](https://github.com/mikay1337/cmake-template/actions/workflows/sanitizer.yml/badge.svg?branch=dev)](https://github.com/mikay1337/cmake-template/actions/workflows/sanitizer.yml)
 [![CodeQL](https://github.com/mikay1337/cmake-template/actions/workflows/codeql-analysis.yml/badge.svg?branch=dev)](https://github.com/mikay1337/cmake-template/actions/workflows/codeql-analysis.yml)
 [![Codecov][codecov-badge]][codecov-link]
-
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
 
 
 
