@@ -16,7 +16,6 @@ on:
 
 jobs:
   linux-build:
-    if: github.repository == 'mikay1337/cmake-template'
     strategy:
       fail-fast: false
       matrix:

@@ -36,8 +36,6 @@ jobs:
           # README from template
           sed -i "s|%%OWNER_NAME%%|${GITHUB_REPOSITORY_OWNER}|g" README.md
           sed -i "s|%%REPO_NAME%%|${GITHUB_REPOSITORY_NAME}|g" README.md
-
-          sed -i "/if: github.repository == 'mikay1337\\/cmake-template'/d" .github/workflows/*.yml
           
           # cleanup this very GitHub Actions workflow yml
           rm .github/workflows/migrate-repo-template.yml

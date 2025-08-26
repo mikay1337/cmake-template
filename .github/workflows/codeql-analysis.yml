@@ -29,7 +29,6 @@ on:
 
 jobs:
   analyze:
-    if: github.repository == 'mikay1337/cmake-template'
     name: Analyze
     runs-on: ubuntu-latest
 
