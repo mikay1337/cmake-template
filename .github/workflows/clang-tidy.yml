@@ -16,7 +16,6 @@ on:
 
 jobs:
   clang-tidy:
-    if: github.repository == 'mikay1337/cmake-template'
     runs-on: ubuntu-latest
 
     steps:
