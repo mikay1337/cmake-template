@@ -34,12 +34,15 @@ jobs:
         run: |
 
           # README from template
-          sed -i "s|%%OWNER_NAME%%|${GITHUB_REPOSITORY_OWNER}|g" README.md
-          sed -i "s|%%REPO_NAME%%|${GITHUB_REPOSITORY_NAME}|g" README.md
+          sed -i "s@mikay1337@$GITHUB_REPOSITORY_OWNER@g" README.md
+          sed -i "s@cmake-template@$GITHUB_REPOSITORY_NAME@g" README.md
           
           # cleanup this very GitHub Actions workflow yml
           rm .github/workflows/migrate-repo-template.yml
+
+          # FIXME: remove files listed in removal-list
           rm -Rf < .github/template/removal-list
+          rm LICENSE
           rm -Rf .github/template/
 
       - name: Commit files
