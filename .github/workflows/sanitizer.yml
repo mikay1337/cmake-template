@@ -2,16 +2,21 @@ name: Sanitizer
 
 on:
   push:
+    branches:
+      - main
     paths-ignore:
       - 'README.md'
       - 'doc/**'
   pull_request:
+    branches:
+      - main
     paths-ignore:
       - 'README.md'
       - 'doc/**'
 
 jobs:
   sanitizer:
+    if: github.repository == 'mikay1337/cmake-template'
     strategy:
       fail-fast: false
       matrix:

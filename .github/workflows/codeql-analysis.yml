@@ -13,13 +13,14 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
     paths-ignore:
       - 'README.md'
       - 'doc/**'
   pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ main ]
+    branches:
+      - main
     paths-ignore:
       - 'README.md'
       - 'doc/**'
@@ -28,6 +29,7 @@ on:
 
 jobs:
   analyze:
+    if: github.repository == 'mikay1337/cmake-template'
     name: Analyze
     runs-on: ubuntu-latest
 

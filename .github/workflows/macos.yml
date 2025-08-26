@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - dev
     paths-ignore:
       - 'README.md'
       - 'doc/**'
@@ -17,6 +16,7 @@ on:
 
 jobs:
   xcode:
+    if: github.repository == 'mikay1337/cmake-template'
     strategy:
       fail-fast: false
       matrix:
@@ -27,12 +27,6 @@ jobs:
           - llvm: 18
             build_type: Release
             os: macos-14
-          - llvm: 16
-            build_type: Debug
-            os: macos-13
-          - llvm: 16
-            build_type: Release
-            os: macos-13
     runs-on: ${{ matrix.os }}
 
     steps:

@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - dev
     paths-ignore:
       - 'README.md'
       - 'doc/**'
@@ -15,8 +14,9 @@ on:
       - 'README.md'
       - 'doc/**'
 
-jobs:
+jobs:    
   windows-msvc:
+    if: github.repository == 'mikay1337/cmake-template'
     strategy:
       fail-fast: false
       matrix:
@@ -45,6 +45,7 @@ jobs:
       run: ctest -C ${{ matrix.build_type }} --output-on-failure
 
   windows-clang:
+    if: github.repository == 'mikay1337/cmake-template'
     strategy:
       fail-fast: false
       matrix:
