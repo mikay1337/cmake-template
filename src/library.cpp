@@ -2,5 +2,5 @@
 
 [[nodiscard]] auto Factorial(int n) noexcept -> int
 {
-    return FactorialInline(n);
+  return FactorialInline(n);
 }
