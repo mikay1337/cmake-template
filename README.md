@@ -1,3 +1,5 @@
+<div align="center">
+
 # cmake-template
 
 [![Windows](https://github.com/mikay1337/cmake-template/actions/workflows/windows.yml/badge.svg)](https://github.com/mikay1337/cmake-template/actions/workflows/windows.yml)
@@ -16,3 +18,7 @@
 
 [codecov-badge]:   https://codecov.io/gh/mikay1337/cmake-template/branch/dev/graph/badge.svg
 [codecov-link]:    https://codecov.io/gh/mikay1337/cmake-template
+
+</div>
+
+***
