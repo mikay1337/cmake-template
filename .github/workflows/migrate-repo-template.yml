@@ -8,7 +8,6 @@ on:
   push:
     branches:
       - main
-      - develop
 
 permissions:
   contents: write
@@ -33,15 +32,12 @@ jobs:
           GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
           GITHUB_REPOSITORY_URL: ${{ github.repositoryUrl }}
         run: |
-          # gradle files
-          ## gradle.properties - initial version 
-          echo "version=0.0.1-SNAPSHOT" > gradle.properties
 
           # README from template
-          mv -f .github/template/README.md README.md
-          sed -i "s@%%OWNER_NAME%%@$GITHUB_REPOSITORY_OWNER@g" README.md
-          sed -i "s@%%REPO_NAME%%@$GITHUB_REPOSITORY_NAME@g" README.md
-          sed -i "s@%%REPO_URL%%@$GITHUB_REPOSITORY_URL@g" README.md
+          sed -i "s|%%OWNER_NAME%%|${GITHUB_REPOSITORY_OWNER}|g" README.md
+          sed -i "s|%%REPO_NAME%%|${GITHUB_REPOSITORY_NAME}|g" README.md
+
+          sed -i "/if: github.repository == 'mikay1337\\/cmake-template'/d" .github/workflows/*.yml
           
           # cleanup this very GitHub Actions workflow yml
           rm .github/workflows/migrate-repo-template.yml

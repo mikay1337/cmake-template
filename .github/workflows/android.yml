@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - dev
     paths-ignore:
       - 'README.md'
       - 'doc/**'
@@ -17,14 +16,14 @@ on:
 
 jobs:
   android:
+    if: github.repository == 'mikay1337/cmake-template'
     strategy:
       fail-fast: false
       matrix:
         platform:
-          - android-27
           - android-29
+          - android-33
         abi:
-          - armeabi-v7a
           - arm64-v8a
         build_type: [Debug, Release]
     runs-on: ubuntu-24.04
