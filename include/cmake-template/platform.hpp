@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CMAKE_TEMPLATE_PLATFORM_HPP
+#define CMAKE_TEMPLATE_PLATFORM_HPP
 
 // Detect platform
 #if defined(_WIN32) || defined(_WIN64)
@@ -57,3 +58,5 @@
 #else
 #define CPP_VERSION "Pre-C++11"
 #endif
+
+#endif  // CMAKE_TEMPLATE_PLATFORM_HPP

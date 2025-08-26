@@ -33,14 +33,8 @@ class MyClass
   [[nodiscard]] auto DoSomething(const std::string& input) const -> int
   {
     // If-else with spacing & clang-format test
-    if (input.empty())
-    {
-      return 0;
-    }
-    if (input.size() > 10)
-    {
-      return 10;
-    }
+    if (input.empty()) { return 0; }
+    if (input.size() > 10) { return 10; }
     return static_cast<int>(input.size());
   }
 
@@ -85,10 +79,7 @@ class MyClass
   {
     for (const auto& [k, v] : data)
     {
-      if (k == key)
-      {
-        return std::make_pair(k, v);
-      }
+      if (k == key) { return std::make_pair(k, v); }
     }
     return std::nullopt;
   }
@@ -99,10 +90,7 @@ class MyClass
   void ProcessWithCallback(std::unique_ptr<int> value,
                            const std::function<void(int)>& callback)
   {
-    if (value)
-    {
-      callback(*value);
-    }
+    if (value) { callback(*value); }
     ++member_variable_;
   }
 
@@ -146,11 +134,8 @@ inline void TestTreeFunction()
   std::ranges::sort(values);
 
   // Range-based for loop
-  for (const auto& v : values)
-  {
-    std::cout << v << " ";
-  }
+  for (const auto& v : values) { std::cout << v << " "; }
   std::cout << "\n";
 }
 
-#endif // CODE_STYLE_HPP
+#endif  // CMAKE_TEMPLATE_CODE_STYLE_HPP
