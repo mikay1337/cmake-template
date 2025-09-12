@@ -71,6 +71,11 @@ target_include_directories(${PROJECT_NAME}_header_only
         "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>"
 )
 
+#=============================================================================
+# Generate clangd configuration
+#=============================================================================
+configure_file(.clangd.in ${CMAKE_SOURCE_DIR}/.clangd @ONLY)
+
 #==============================================================================
 # Tests
 #==============================================================================
